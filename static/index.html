@@ -1,0 +1,252 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101216">
+  <title>DeepGuard — Media Screening</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="phone-shell">
+
+    <!-- LOGIN -->
+    <section id="login-screen" class="screen login-screen">
+      <div class="brand-mark">⌕</div>
+      <p class="eyebrow">DEEPGUARD / SECURE ACCESS</p>
+      <h1>Scan with<br>signal.</h1>
+      <p class="muted intro">
+        A private workspace for screening images and videos.
+      </p>
+
+      <form id="login-form" class="login-card">
+        <label for="email">EMAIL</label>
+        <input id="email" name="email" type="email"
+               placeholder="operator@domain.com" autocomplete="username" required>
+
+        <label for="password">PASSWORD</label>
+        <input id="password" name="password" type="password"
+               placeholder="8 characters minimum" minlength="8"
+               autocomplete="current-password" required>
+
+        <button class="primary full" type="submit">Enter workspace</button>
+        <p class="tiny muted">
+          Local demo access only. Real account registration is not configured.
+        </p>
+      </form>
+    </section>
+
+    <!-- APPLICATION -->
+    <section id="app-screen" class="screen hidden">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">DEEPGUARD / COMMAND</p>
+          <h2 id="page-title">Workspace</h2>
+        </div>
+        <span class="status-pill"><i></i> ONLINE</span>
+      </header>
+
+      <!-- WORKSPACE -->
+      <section id="page-home" class="page">
+        <button class="scan-hero" type="button" data-page="scan">
+          <span class="hero-icon">⌕</span>
+          <span>
+            <strong>Start a forensic scan</strong>
+            <small>JPG, PNG, MP4, MOV · up to 200 MB</small>
+          </span>
+          <b>→</b>
+        </button>
+
+        <div class="stats">
+          <article class="stat-card">
+            <small>TOTAL SCANS</small>
+            <strong id="total-count">0</strong>
+          </article>
+          <article class="stat-card">
+            <small>FLAGGED</small>
+            <strong>—</strong>
+            <small class="muted">No model</small>
+          </article>
+          <article class="stat-card">
+            <small>MODEL</small>
+            <strong class="offline">OFFLINE</strong>
+          </article>
+        </div>
+
+        <div class="section-heading">
+          <h3>Recent telemetry</h3>
+          <button class="text-button" type="button" data-page="records">
+            VIEW RECORDS
+          </button>
+        </div>
+
+        <div id="recent-list" class="record-list">
+          <div class="empty-card">
+            <div class="empty-icon">◉</div>
+            <strong>No forensic scans recorded</strong>
+            <p class="muted">Upload your first image or video to begin.</p>
+          </div>
+        </div>
+
+        <aside class="notice">
+          <strong>ⓘ A screening signal is not proof.</strong>
+          <p>
+            No AI detector is connected. This app records uploads and
+            extracts video frames but does not determine authenticity.
+          </p>
+        </aside>
+      </section>
+
+      <!-- SCAN MEDIA -->
+      <section id="page-scan" class="page hidden">
+        <p class="muted">
+          Upload an image or video to create a scan record and inspect
+          extracted video frames.
+        </p>
+
+        <form id="scan-form">
+          <label class="upload-box" for="media-file">
+            <span class="upload-icon">⇧</span>
+            <strong id="file-label">Select media</strong>
+            <small>JPG, PNG, WEBP, MP4, MOV, AVI, MKV · max 200 MB</small>
+            <input id="media-file" name="file" type="file"
+                   accept=".jpg,.jpeg,.png,.webp,.mp4,.mov,.avi,.mkv,.webm"
+                   required>
+          </label>
+
+          <div class="info-card">
+            <div>
+              <b>♢ &nbsp; Local storage</b>
+              <p>Uploads and extracted frames are saved in the app's data folder.</p>
+            </div>
+            <div>
+              <b>⌁ &nbsp; No certainty claims</b>
+              <p>Frame extraction is not a deepfake detection verdict.</p>
+            </div>
+            <div>
+              <b>◷ &nbsp; Model unavailable</b>
+              <p>A real detection model must be installed separately.</p>
+            </div>
+          </div>
+
+          <button class="primary full" type="submit" id="run-button">
+            ▷ &nbsp; Record screening
+          </button>
+        </form>
+
+        <div id="scan-message" class="message hidden" aria-live="polite"></div>
+        <section id="video-details" class="video-details hidden"
+                 aria-live="polite"></section>
+      </section>
+
+      <!-- HISTORY -->
+      <section id="page-history" class="page hidden">
+        <div class="section-heading">
+          <h3>Recent scan history</h3>
+          <button class="text-button" type="button" data-page="records">
+            ALL RECORDS
+          </button>
+        </div>
+        <p class="muted">A short view of previously recorded scans.</p>
+        <div id="history-list" class="record-list"></div>
+      </section>
+
+      <!-- NEW SEPARATE RECORDS PAGE -->
+      <section id="page-records" class="page hidden">
+        <div class="records-header">
+          <div>
+            <p class="eyebrow">LIBRARY / ARCHIVE</p>
+            <h3>Scan Records</h3>
+            <p class="muted">Browse and manage your saved scans.</p>
+          </div>
+          <button id="refresh-records" class="secondary-button" type="button">
+            Refresh
+          </button>
+        </div>
+
+        <div class="records-summary">
+          <article class="record-stat">
+            <small>TOTAL RECORDS</small>
+            <strong id="records-total">0</strong>
+          </article>
+          <article class="record-stat">
+            <small>VIDEOS</small>
+            <strong id="records-videos">0</strong>
+          </article>
+          <article class="record-stat">
+            <small>IMAGES</small>
+            <strong id="records-images">0</strong>
+          </article>
+        </div>
+
+        <div class="records-toolbar">
+          <input id="records-search" type="search"
+                 placeholder="Search filename..."
+                 aria-label="Search records">
+          <select id="records-filter" aria-label="Filter by media type">
+            <option value="all">All media</option>
+            <option value="video">Videos</option>
+            <option value="image">Images</option>
+          </select>
+        </div>
+
+        <div id="records-list" class="record-list">
+          <div class="empty-card"><p>Loading records...</p></div>
+        </div>
+      </section>
+
+      <!-- PROFILE -->
+      <section id="page-profile" class="page hidden">
+        <div class="profile-card">
+          <div class="profile-avatar">♟</div>
+          <div>
+            <strong id="profile-email">operator@domain.com</strong>
+            <p class="eyebrow">DEMO WORKSPACE</p>
+          </div>
+        </div>
+
+        <div class="info-card profile-info">
+          <div>
+            <b>♙ &nbsp; Demo access</b>
+            <p>This starter does not provide real account authentication.</p>
+          </div>
+          <div>
+            <b>▤ &nbsp; Media retention</b>
+            <p>Uploaded files remain until their records are deleted.</p>
+          </div>
+          <div>
+            <b>⚙ &nbsp; Model limits</b>
+            <p>No AI model is configured to classify media as real or fake.</p>
+          </div>
+        </div>
+
+        <button id="sign-out" class="danger full" type="button">
+          ⇥ &nbsp; Sign out
+        </button>
+      </section>
+
+      <!-- NAVIGATION -->
+      <nav class="bottom-nav" aria-label="Main navigation">
+        <button class="nav-item active" type="button" data-page="home">
+          <span>⌂</span>Home
+        </button>
+        <button class="nav-item" type="button" data-page="scan">
+          <span>▣</span>Scan
+        </button>
+        <button class="nav-item" type="button" data-page="history">
+          <span>◴</span>History
+        </button>
+        <button class="nav-item" type="button" data-page="records">
+          <span>▤</span>Records
+        </button>
+        <button class="nav-item" type="button" data-page="profile">
+          <span>♙</span>Profile
+        </button>
+      </nav>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

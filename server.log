@@ -1,0 +1,54 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3000
+ * Running on http://10.252.206.188:3000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [21/Oct/2026 23:44:17] "GET /?utm_source=chatgpt.com HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:44:17] "GET /static/styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:44:17] "GET /static/app.js HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:44:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [21/Oct/2026 23:45:15] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:45:15] "GET /api/screenings HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:45:24] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:45:24] "GET /api/screenings HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:45:29] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:45:29] "GET /api/screenings HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:45:38] "[36mGET /?utm_source=chatgpt.com HTTP/1.1[0m" 304 -
+127.0.0.1 - - [21/Oct/2026 23:45:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [21/Oct/2026 23:45:38] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [21/Oct/2026 23:46:14] "[36mGET /?utm_source=chatgpt.com HTTP/1.1[0m" 304 -
+127.0.0.1 - - [21/Oct/2026 23:46:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [21/Oct/2026 23:46:14] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [21/Oct/2026 23:47:36] "[36mGET /?utm_source=chatgpt.com HTTP/1.1[0m" 304 -
+127.0.0.1 - - [21/Oct/2026 23:47:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [21/Oct/2026 23:47:36] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [21/Oct/2026 23:48:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:48:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [21/Oct/2026 23:48:14] "[36mGET /static/app.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [21/Oct/2026 23:48:50] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:48:50] "GET /api/screenings HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:49:11] "[35m[1mPOST /api/screen HTTP/1.1[0m" 201 -
+127.0.0.1 - - [21/Oct/2026 23:49:11] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:49:11] "GET /api/screenings HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:49:16] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:49:16] "GET /api/screenings HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:49:37] "[35m[1mPOST /api/screen HTTP/1.1[0m" 201 -
+127.0.0.1 - - [21/Oct/2026 23:49:37] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:49:37] "GET /api/screenings HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:49:59] "[35m[1mPOST /api/screen HTTP/1.1[0m" 201 -
+127.0.0.1 - - [21/Oct/2026 23:49:59] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:49:59] "GET /api/screenings HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:50:08] "[35m[1mPOST /api/screen HTTP/1.1[0m" 201 -
+127.0.0.1 - - [21/Oct/2026 23:50:08] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:50:08] "GET /api/screenings HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:50:11] "GET /api/status HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:50:11] "GET /api/screenings HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2026 23:55:03] "[33mGET /?utm_source=chatgpt.com HTTP/1.1[0m" 404 -
+127.0.0.1 - - [21/Oct/2026 23:55:04] "[33mGET /?utm_source=chatgpt.com HTTP/1.1[0m" 404 -
+127.0.0.1 - - [21/Oct/2026 23:55:06] "[33mGET /?utm_source=chatgpt.com HTTP/1.1[0m" 404 -
+127.0.0.1 - - [21/Oct/2026 23:55:06] "[33mGET /?utm_source=chatgpt.com HTTP/1.1[0m" 404 -
+127.0.0.1 - - [21/Oct/2026 23:55:07] "[33mGET /?utm_source=chatgpt.com HTTP/1.1[0m" 404 -
+127.0.0.1 - - [21/Oct/2026 23:55:07] "[33mGET /?utm_source=chatgpt.com HTTP/1.1[0m" 404 -
+127.0.0.1 - - [21/Oct/2026 23:55:07] "[33mGET /?utm_source=chatgpt.com HTTP/1.1[0m" 404 -
